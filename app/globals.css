@@ -3,14 +3,14 @@
 @tailwind utilities;
 
 :root {
-  --bg-primary: #0a0e27;
-  --bg-secondary: #1a1f3a;
-  --bg-card: #151b35;
+  --bg-primary: #0a0e1f;
+  --bg-secondary: #12172e;
+  --bg-card: #0f1428;
   --text-primary: #ffffff;
-  --text-secondary: #a0aec0;
-  --accent-cyan: #00d9ff;
+  --text-secondary: #8892b0;
+  --accent-cyan: #00d4ff;
   --accent-green: #00e5cc;
-  --border-color: #2d3748;
+  --border-color: #1e2a47;
   --spacing-xs: 0.5rem;
   --spacing-sm: 1rem;
   --spacing-md: 1.5rem;
@@ -35,6 +35,40 @@ body {
   font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
   line-height: 1.6;
   overflow-x: hidden;
+  cursor: none;
+}
+
+.cursor-dot {
+  width: 8px;
+  height: 8px;
+  background: var(--accent-cyan);
+  border-radius: 50%;
+  position: fixed;
+  pointer-events: none;
+  z-index: 9999;
+  transition: transform 0.15s ease;
+}
+
+.cursor-outline {
+  width: 40px;
+  height: 40px;
+  border: 2px solid var(--accent-cyan);
+  border-radius: 50%;
+  position: fixed;
+  pointer-events: none;
+  z-index: 9998;
+  transition: all 0.15s ease;
+  box-shadow: 0 0 20px rgba(0, 217, 255, 0.3);
+}
+
+.cursor-outline.hover {
+  width: 60px;
+  height: 60px;
+  background: rgba(0, 217, 255, 0.1);
+}
+
+a, button {
+  cursor: none;
 }
 
 html {
@@ -189,11 +223,60 @@ html {
   cursor: pointer;
   transition: all 0.3s ease;
   z-index: 1000;
+  opacity: 0;
+  visibility: hidden;
+}
+
+.scroll-to-top.visible {
+  opacity: 1;
+  visibility: visible;
 }
 
 .scroll-to-top:hover {
   transform: translateY(-5px);
   box-shadow: 0 10px 30px rgba(0, 217, 255, 0.4);
+}
+
+.mouse-scroll {
+  position: absolute;
+  bottom: 3rem;
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.mouse-icon {
+  width: 24px;
+  height: 38px;
+  border: 2px solid var(--accent-cyan);
+  border-radius: 12px;
+  position: relative;
+}
+
+.mouse-wheel {
+  width: 3px;
+  height: 8px;
+  background: var(--accent-cyan);
+  border-radius: 2px;
+  position: absolute;
+  top: 8px;
+  left: 50%;
+  transform: translateX(-50%);
+  animation: scroll-down 1.5s infinite;
+}
+
+@keyframes scroll-down {
+  0% {
+    opacity: 1;
+    transform: translateX(-50%) translateY(0);
+  }
+  100% {
+    opacity: 0;
+    transform: translateX(-50%) translateY(12px);
+  }
 }
 
 input, textarea {

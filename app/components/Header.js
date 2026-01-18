@@ -19,11 +19,11 @@ export default function Header() {
       left: 0,
       right: 0,
       zIndex: 1000,
-      background: scrolled ? 'rgba(10, 14, 39, 0.95)' : 'transparent',
+      background: scrolled ? 'rgba(10, 14, 31, 0.95)' : 'transparent',
       backdropFilter: scrolled ? 'blur(10px)' : 'none',
       borderBottom: scrolled ? '1px solid var(--border-color)' : 'none',
       transition: 'all 0.3s ease',
-      padding: '1.25rem 0'
+      padding: '1.5rem 0'
     }}>
       <div className="container" style={{
         display: 'flex',
@@ -33,27 +33,25 @@ export default function Header() {
         <div style={{
           fontSize: '1.5rem',
           fontWeight: '700',
-          background: 'linear-gradient(135deg, var(--accent-cyan), var(--accent-green))',
-          WebkitBackgroundClip: 'text',
-          WebkitTextFillColor: 'transparent',
-          backgroundClip: 'text'
+          color: 'var(--accent-cyan)',
+          fontFamily: 'monospace'
         }}>
           &lt;HP/&gt;
         </div>
 
         <nav style={{
           display: 'flex',
-          gap: '2rem',
+          gap: '2.5rem',
           alignItems: 'center'
         }}>
-          <a href="#home" style={{ color: 'var(--text-primary)', textDecoration: 'none', transition: 'color 0.3s' }}>Home</a>
-          <a href="#about" style={{ color: 'var(--text-primary)', textDecoration: 'none', transition: 'color 0.3s' }}>About</a>
-          <a href="#skills" style={{ color: 'var(--text-primary)', textDecoration: 'none', transition: 'color 0.3s' }}>Skills</a>
-          <a href="#projects" style={{ color: 'var(--text-primary)', textDecoration: 'none', transition: 'color 0.3s' }}>Projects</a>
-          <a href="#experience" style={{ color: 'var(--text-primary)', textDecoration: 'none', transition: 'color 0.3s' }}>Experience</a>
-          <a href="#contact" style={{ color: 'var(--text-primary)', textDecoration: 'none', transition: 'color 0.3s' }}>Contact</a>
-          <button className="btn-primary" onClick={() => document.getElementById('contact').scrollIntoView({ behavior: 'smooth' })}>
-            Get in Touch
+          <a href="#home" style={{ color: 'var(--text-primary)', textDecoration: 'none', fontSize: '0.95rem', transition: 'color 0.3s' }}>Home</a>
+          <a href="#about" style={{ color: 'var(--text-primary)', textDecoration: 'none', fontSize: '0.95rem', transition: 'color 0.3s' }}>About</a>
+          <a href="#skills" style={{ color: 'var(--text-primary)', textDecoration: 'none', fontSize: '0.95rem', transition: 'color 0.3s' }}>Skills</a>
+          <a href="#projects" style={{ color: 'var(--text-primary)', textDecoration: 'none', fontSize: '0.95rem', transition: 'color 0.3s' }}>Projects</a>
+          <a href="#experience" style={{ color: 'var(--text-primary)', textDecoration: 'none', fontSize: '0.95rem', transition: 'color 0.3s' }}>Experience</a>
+          <a href="#contact" style={{ color: 'var(--text-primary)', textDecoration: 'none', fontSize: '0.95rem', transition: 'color 0.3s' }}>Contact</a>
+          <button className="btn-primary" style={{ padding: '0.75rem 1.75rem', fontSize: '0.95rem' }} onClick={() => document.getElementById('contact').scrollIntoView({ behavior: 'smooth' })}>
+            Hire Me
           </button>
         </nav>
       </div>

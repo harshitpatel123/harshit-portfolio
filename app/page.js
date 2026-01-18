@@ -6,10 +6,13 @@ import Projects from './components/Projects';
 import Experience from './components/Experience';
 import Contact from './components/Contact';
 import Footer from './components/Footer';
+import CustomCursor from './components/CustomCursor';
+import ScrollToTop from './components/ScrollToTop';
 
 export default function Home() {
   return (
     <>
+      <CustomCursor />
       <Header />
       <main>
         <Hero />
@@ -20,6 +23,7 @@ export default function Home() {
         <Contact />
       </main>
       <Footer />
+      <ScrollToTop />
     </>
   );
 }
